@@ -100,7 +100,10 @@ class App extends Component {
         </form>
         <hr />
         <h4>Ready to pick a winner?</h4>
-        <button onClick={this.onClick} disabled={this.state.loading}>
+        <button
+          onClick={this.onClick}
+          disabled={this.state.loading || !this.state.players.length}
+        >
           Pick a Winner!
         </button>
         <hr />
