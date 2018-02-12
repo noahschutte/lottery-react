@@ -21,14 +21,3 @@ https://github.com/noahschutte/solidity-lottery
 
 1. `yarn install` || `npm install`
 1. `yarn start` || `npm start`
-
----
-
-## How do I run the tests?
-
-_Glad you asked :)_
-
-### Run tests:
-
-1. `yarn install` || `npm install`
-1. `yarn test` || `npm test`
