@@ -93,6 +93,7 @@ class App extends Component {
           <h4>Want to try your luck?</h4>
           <label>Amount of ether to enter</label>
           <input
+            type="number"
             value={this.state.value}
             onChange={event => this.setState({ value: event.target.value })}
           />
