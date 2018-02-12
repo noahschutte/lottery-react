@@ -1,6 +1,10 @@
 # A Lottery Application on Rinkeby using Solidity
 
-## Lottery Contract
+## Heroku Address
+
+https://rinkeby.herokuapp.com/
+
+## Lottery Contract Github Repository
 
 https://github.com/noahschutte/solidity-lottery
 
