@@ -24,6 +24,11 @@ class App extends Component {
   onSubmit = async event => {
     event.preventDefault();
 
+    if (this.state.value <= 0.01) {
+      this.setState({ message: 'Entry must exceed 0.01 ether.' });
+      return;
+    }
+
     const accounts = await web3.eth.getAccounts();
 
     this.setState({ loading: true });
@@ -79,6 +84,10 @@ class App extends Component {
           {web3.utils.fromWei(this.state.balance, 'ether')} ether!
         </p>
         <p>This is a test network. Do NOT send real ether.</p>
+        <ul>
+          <li>You must have MetaMask installed.</li>
+          <li>You must accept the funds transfer when prompted.</li>
+        </ul>
         <hr />
         <form onSubmit={this.onSubmit}>
           <h4>Want to try your luck?</h4>
