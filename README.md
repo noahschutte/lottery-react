@@ -2,6 +2,8 @@
 
 ## Heroku Address
 
+You must have the chrome extension, MetaMask, installed on your browser in order to view this website.
+
 https://rinkeby.herokuapp.com/
 
 ## Lottery Contract Github Repository
