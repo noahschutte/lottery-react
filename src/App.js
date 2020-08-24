@@ -19,6 +19,12 @@ class App extends Component {
     const balance = await web3.eth.getBalance(lottery.options.address);
 
     this.setState({ manager, players, balance });
+
+    web3.eth.subscribe('newBlockHeaders', function (err, result) {
+      if(err) {
+        console.log(err);
+      }
+    });
   }
 
   onSubmit = async event => {
@@ -77,7 +83,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h2>Ether Lottery on Rinkeby</h2>
+        <h2>Noah's Ether Lottery on Rinkeby</h2>
         <p>
           This contract is managed by {this.state.manager}. There are currently{' '}
           {this.state.players.length} people entered, competing to win{' '}
