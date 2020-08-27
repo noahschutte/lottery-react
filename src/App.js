@@ -10,7 +10,8 @@ class App extends Component {
     balance: '',
     value: '',
     message: '',
-    loading: false
+    loading: false,
+    pageLoading: true
   };
 
   async componentDidMount() {
@@ -25,6 +26,8 @@ class App extends Component {
         console.log(err);
       }
     });
+
+    this.setState({pageLoading: false})
   }
 
   onSubmit = async event => {
@@ -81,42 +84,48 @@ class App extends Component {
   };
 
   render() {
-    return (
-      <div>
-        <h2>Noah's Ether Lottery on Rinkeby</h2>
-        <p>
-          This contract is managed by {this.state.manager}. There are currently{' '}
-          {this.state.players.length} people entered, competing to win{' '}
-          {web3.utils.fromWei(this.state.balance, 'ether')} ether!
-        </p>
-        <p>This is a test network. Do NOT send real ether.</p>
-        <ul>
-          <li>You must have MetaMask installed.</li>
-          <li>You must accept the funds transfer when prompted.</li>
-        </ul>
-        <hr />
-        <form onSubmit={this.onSubmit}>
-          <h4>Want to try your luck?</h4>
-          <label>Amount of ether to enter</label>
-          <input
-            type="number"
-            value={this.state.value}
-            onChange={event => this.setState({ value: event.target.value })}
-          />
-          <button disabled={this.state.loading}>Enter</button>
-        </form>
-        <hr />
-        <h4>Ready to pick a winner?</h4>
-        <button
-          onClick={this.onClick}
-          disabled={this.state.loading || !this.state.players.length}
-        >
-          Pick a Winner!
-        </button>
-        <hr />
-        <h1>{this.state.message}</h1>
-      </div>
-    );
+    if (this.state.pageLoading) {
+      return <h1>Connecting to the Rinkeby network... feel free to refresh if this is taking a while.</h1>
+    } else {
+      return (
+        <div>
+          <h2>Noah's Ether Lottery on Rinkeby</h2>
+          <p>
+            This contract is managed by {this.state.manager}. There are currently{' '}
+            {this.state.players.length} people entered, competing to win{' '}
+            {web3.utils.fromWei(this.state.balance, 'ether')} ether!
+          </p>
+          <p>This is a test network. Do NOT send real ether.</p>
+          <ul>
+            <li>You must have the MetaMask extension installed.</li>
+            <li>MetaMask must be logged into an account on the Rinkeby Test Network.</li>
+            <li>Manually connect to the site in the MetaMask browser extension.</li>
+            <li>You must accept the funds transfer when prompted.</li>
+          </ul>
+          <hr />
+          <form onSubmit={this.onSubmit}>
+            <h4>Want to try your luck?</h4>
+            <label>Amount of ether to enter</label>
+            <input
+              type="number"
+              value={this.state.value}
+              onChange={event => this.setState({ value: event.target.value })}
+            />
+            <button disabled={this.state.loading}>Enter</button>
+          </form>
+          <hr />
+          <h4>Ready to pick a winner?</h4>
+          <button
+            onClick={this.onClick}
+            disabled={this.state.loading || !this.state.players.length}
+          >
+            Pick a Winner!
+          </button>
+          <hr />
+          <h1>{this.state.message}</h1>
+        </div>
+      );
+    }
   }
 }
 

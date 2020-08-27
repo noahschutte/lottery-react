@@ -2,7 +2,12 @@
 
 ## Heroku Address
 
-You must have the chrome extension, MetaMask, installed on your browser in order to view this website.
+You must have the browser extension, MetaMask, installed on your browser in order to view this website.
+- Wait up to a minute for the Heroku dyno to startup, you may need to refresh the page
+- Connect your ethereum account or create an account
+- Obtain Ethereum Rinkeby Test Network funds
+- Manually connect MetaMask to the site
+- Accept the funds transfer when prompted
 
 https://rinkeby.herokuapp.com/
 
