@@ -1,11 +1,11 @@
-# A Lottery Application on Rinkeby using Solidity
+# A Lottery Application on Ropsten using Solidity
 
 ## Heroku Address
 
 You must have the browser extension, MetaMask, installed on your browser in order to view this website.
 - Wait up to a minute for the Heroku dyno to startup, you may need to refresh the page
 - Connect your ethereum account or create an account
-- Obtain Ethereum Rinkeby Test Network funds
+- Obtain Ethereum Ropsten Test Network funds
 - Manually connect MetaMask to the site
 - Accept the funds transfer when prompted
 

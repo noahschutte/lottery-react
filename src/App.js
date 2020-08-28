@@ -85,11 +85,11 @@ class App extends Component {
 
   render() {
     if (this.state.pageLoading) {
-      return <h1>Connecting to the Rinkeby network... feel free to refresh if this is taking a while.</h1>
+      return <h1>Connecting to the Ropsten network... feel free to refresh if this is taking a while.</h1>
     } else {
       return (
         <div>
-          <h2>Noah's Ether Lottery on Rinkeby</h2>
+          <h2>Noah's Ether Lottery on Ropsten</h2>
           <p>
             This contract is managed by {this.state.manager}. There are currently{' '}
             {this.state.players.length} people entered, competing to win{' '}
@@ -98,7 +98,7 @@ class App extends Component {
           <p>This is a test network. Do NOT send real ether.</p>
           <ul>
             <li>You must have the MetaMask extension installed.</li>
-            <li>MetaMask must be logged into an account on the Rinkeby Test Network.</li>
+            <li>MetaMask must be logged into an account on the Ropsten Test Network.</li>
             <li>Manually connect to the site in the MetaMask browser extension.</li>
             <li>You must accept the funds transfer when prompted.</li>
           </ul>
